@@ -1,0 +1,14 @@
+<div header>
+    <h3>{{massgeUserHeader}}</h3>
+</div>
+<div class="body" body>
+    <h3 *ngIf="massgeUserBody1">{{massgeUserBody1}}</h3>
+    <h5 *ngIf="massgeUserBody2"> {{massgeUserBody2}}</h5>
+    <ng-content select="[body]">
+    </ng-content>
+</div>
+<br>
+<div class="footer">
+    <button *ngIf="ifButton&&textOfBtnNo" (click)="BtnNo()" type="button" class="btn btn-color">{{textOfBtnNo}}</button>
+    <button *ngIf="ifButton&&textOfBtnYes" (click)="BtnYes()" type="button" class="btn btn-color">{{textOfBtnYes}}</button>
+</div>

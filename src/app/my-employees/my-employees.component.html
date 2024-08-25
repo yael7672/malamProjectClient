@@ -1,0 +1,52 @@
+<h2>
+    employees list
+</h2>
+
+<div class="search">
+    <select id="inputState" class="form-control" ngModel (ngModelChange)="whichSearchTypeOpen($event)">
+        <option value="">searchBy </option>
+        <option value="0">salary</option>
+        <option value="1">employeeId</option>
+    </select>
+    <div class="form-outline" *ngIf="openSortInputBySalary">
+        <input type="number" name="EmployeeSalaryS" [(ngModel)]="employeeSalarySearch" #EmployeeSalaryS
+            (change)="onSortInputBySalary(employeeSalarySearch)" id="EmployeeSalaryS" class="form-control" />
+    </div>
+
+    <div class="form-outline" *ngIf="openSortInputById">
+        <input type="number" name="EmployeeIdSearchS" [(ngModel)]="employeeIdSearch" #EmployeeIdSearchS 
+            (change)="onSortInputById(employeeIdSearch)" id="employeeIdS" class="form-control" />
+    </div>
+</div>
+<div class="container">
+    <button class="add-btn" (click)="openPopUp(true,'addEmployee')">add employee +</button>
+</div>
+<app-smart-card>
+    <div body>
+        <div *ngIf="myEmployeesArr?.length >= 0 ">
+            <app-smart-table [ifShowpagination]="[true,10]" [thArr]="thArrTableMyEmployees" [ifSortDown]="ifSortDown"
+                [showDelete]="ifDelete" [showUpdate]="ifUpdate" [tableDataKeys]="myEmployeesListKeys"
+                [tableData]="myEmployeesArr" (SortTableDown)="sortTableDown($event)" (EditData)="updateEmployee($event)"
+                (DeleteData)="deleteEmployee($event)" (SortTableUp)="sortTableUp($event)">
+            </app-smart-table>
+        </div>
+        <div *ngIf="myEmployeesArr?.length == 0 || !myEmployeesArr">
+            <br>
+            <h2>no employees</h2>
+        </div>
+    </div>
+</app-smart-card>
+<div *ngIf="isPopUpOpen?.addEmployee">
+    <app-create-employee (addData)="onEmployeeAdded($event)"  [dataArr]="myEmployeesArr"></app-create-employee>
+</div>
+
+<div *ngIf="isPopUpOpen?.deleteEmployee">
+    <app-delete-employee (deleteData)="onEmployeeDelete($event)" [employeeId]="employeeId" [dataArr]="myEmployeesArr">
+    </app-delete-employee>
+</div>
+
+<div *ngIf="isPopUpOpen?.updateEmployee">
+    <app-update-employee (updateData)="onEmployeeUpdate($event)" [employeeId]="employeeId" [specificItem]="myEmployee"
+        [dataArr]="myEmployeesArr">
+    </app-update-employee>
+</div>

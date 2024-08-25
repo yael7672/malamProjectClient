@@ -1,0 +1,45 @@
+<app-pop-up #upPopUP [ifX]="true">
+    <div body>
+        <h4 header class="mb-4">Update Employee
+            <img class="image" src="../../../assets/images/2387679.png">
+        </h4>
+        <form (ngSubmit)="f.valid && UpdateEmployee(f)" #f="ngForm">
+            <div class="form-outline d-flex justify-content-center">
+                <input type="text" id="name" name="Name" class="form-control" placeholder="Name*"
+                    [ngClass]="{ 'is-invalid': f.submitted && name.invalid }"  [(ngModel)]="specificItem.name" #name="ngModel" ngModel required />
+            </div>
+            <div *ngIf="f.submitted && name.invalid" class="text-danger">
+                <span *ngIf="name.errors">שדה זה חובה</span>
+            </div>
+            <div class="form-outline d-flex justify-content-center">
+                <input type="number" id="salary" name="Salary" class="form-control" placeholder="Salary*"
+                    [ngClass]="{ 'is-invalid': f.submitted && salary.invalid }" #salary="ngModel"  [(ngModel)]="specificItem.salary" ngModel  />
+            </div>
+            <div *ngIf="f.submitted && salary.invalid" class="text-danger">
+                <span *ngIf="salary.errors">שדה זה חובה</span>
+            </div>
+         <div class="form-outline d-flex justify-content-center">
+                <input type="number" id="age" name="Age" class="form-control" placeholder="Age*"
+               [ngClass]="{ 'is-invalid': f.submitted && age.invalid }" #age="ngModel" [(ngModel)]="specificItem.age" ngModel  />
+            </div>
+            <div *ngIf="f.submitted && age.invalid" class="text-danger">
+                <span *ngIf="age.errors">שדה זה חובה</span>
+            </div>
+        <div class="form-outline d-flex justify-content-center">
+                <div class="InputWithText">
+                    <p class="date"> Due-date</p>
+                <input type="date" id="dueDate" name="DueDate" value="{{todayDate| date: 'yyyy-MM-dd' }}" class="form-control"
+                    placeholder="dueDate"  [(ngModel)]="specificItem.dueDate" #dueDate  ngModel />
+                </div>
+            </div>
+            <button type="submit" placement="top" ngbTooltip="add Employee" class="btn" [disabled]="isDisabled">
+                update Employee</button>
+        </form>
+    </div>
+</app-pop-up>
+
+<app-pop-up-for-image *ngIf="ifShowSpinner" >
+    <div body class="body-content">
+      <img src="../../assets/images/image_processing20210907-24087-1xvipj3.gif" id="pop-up-image" />
+    </div>
+</app-pop-up-for-image>

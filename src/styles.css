@@ -1,0 +1,308 @@
+body {
+    font-family: Heebo !important;
+  }
+  
+  /* You can add global styles to this file, and also import other style files */
+  .form-control {
+    margin-right: 20px;
+    margin: 0 0 10px 0;
+    text-align: right;
+    width: 20rem;
+  }
+  
+  .text-danger {
+    font-size: 12px;
+    text-align: right !important;
+    position: relative;
+    top: -10px;
+  }
+  
+  h4 {
+    direction: rtl !important;
+    color: black;
+    font-family: Heebo !important;
+  }
+  
+  .card-body {
+    direction: rtl !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  
+  }
+  
+  .close {
+    width: 100%;
+    display: flex;
+    direction: rtl;
+  }
+  
+  .menu {
+    display: flex;
+    direction: rtl;
+    padding: 1rem;
+    justify-content: center;
+    padding-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .button-of-task {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  
+  ::placeholder {
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    text-align: right;
+  }
+  
+  .btn {
+    background-color: #ebb18df2;
+    color: white;
+    border: none !important;
+    font-weight: 600 !important;
+  }
+  
+  .all-page.pop-up-open {
+    overflow: hidden;
+    height: 90vh;
+  }
+  
+  tr {
+    text-align: center;
+  }
+  
+  textarea.form-control {
+    min-height: 100px;
+  }
+  
+  .task-card-timer {
+    max-width: 600px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .input-container {
+    margin: 0.9rem;
+  }
+  
+  .ngx-pagination {
+    margin-left: 0;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: #f1b93c;
+    color: #fefefe;
+    cursor: default;
+  }
+  
+  @media (max-width: 455px) {
+    ul.ngx-pagination {
+      padding-left: 1.5rem;
+    }
+  }
+  
+  @media (max-width:375px) {
+    .box {
+      box-shadow: 0 2px 4px #0000004d;
+      margin-top: 1px;
+      height: 40px !important;
+      font-size: smaller !important;
+  
+    }
+  
+    td {
+      font-size: smaller !important;
+    }
+  }
+  
+  
+  .select-table {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  h2 {
+    direction: rtl;
+    text-align: center;
+    color: rgba(6, 6, 19, 0.795);
+    font-size: 25pt;
+    font-family: Heebo !important;
+  }
+  
+  
+  
+  table.table.table-hover.interestedInTable {
+    max-width: 925px !important;
+  }
+  
+  @media (min-width:600px) {
+  
+    .box-table {
+      margin-top: 5px !important;
+    }
+  }
+  
+  .smart-grid-container {
+    margin-top: 1vh !important;
+    width: 100% !important;
+    direction: rtl !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  
+  .spinner-img {
+    margin-top: 7rem;
+    font-size: larger;
+  }
+  
+  h4.titlePopUpImage {
+    margin-top: -50px !important;
+  }
+  
+  h4 {
+    direction: rtl;
+    text-align: center;
+    color: rgba(6, 6, 19, 0.795);
+    font-family: Heebo !important;
+  }
+  
+  button.btn.btn-color {
+    background-color: #ebb18df2 !important;
+  }
+  
+  button[disabled] {
+    background-color: #efe5def2 !important;
+  }
+  
+  @media(max-width: 400px) {
+    img#pop-up-no-data {
+      width: 40px !important;
+      height: 40px !important;
+    }
+  
+    img#pop-up-loading {
+      width: 35px !important;
+      height: 35px !important;
+    }
+  
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.05em;
+    }
+  
+    h2.JustMinute {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      font-size: small;
+    }
+  }
+  
+  h2.JustMinute {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    font-size: small;
+  
+  }
+  
+  img#pop-up-no-data {
+    width: 65px !important;
+    height: 65px !important;
+  }
+  
+  img#pop-up-loading {
+    width: 55px !important;
+    height: 55px !important;
+  }
+  
+  
+  .disabled-button {
+    background-color: rgb(254, 225, 195);
+  }
+  
+  .green-row {
+    background-color: rgb(106, 220, 106);
+    color: white;
+  }
+  
+  .red-row {
+    background-color: rgb(237, 134, 134);
+    color: white;
+  }
+  
+  .green-row-card {
+    background-color: rgb(106, 220, 106);
+  }
+  
+  .red-row-card  {
+    background-color: rgb(237, 134, 134);
+  }
+  
+  .body-content {
+    height: 50vh;
+  }
+  
+  img#pop-up-image {
+    width: 45%;
+    object-fit: contain;
+    padding-top: 4rem;
+    height: 85%;
+  }
+  
+  .autocomplete-1,
+  .autocomplete-2,
+  .form-control {
+    width: 14rem;
+  }
+  
+  @media(max-width:500px) {
+    select#inputState {
+      margin-top: 4% !important;
+      width: 40%;
+    }
+  
+    .search {
+      justify-content: space-around;
+      display: flex;
+    }
+    .autocomplete-1,
+    .autocomplete-2,
+    .form-control {
+      width: 40%;
+    }
+   .form-outline{
+        margin-top:16px;
+        width: 100%;
+      }
+  }
+  
+  #inputState-1 {
+    width: 18rem;
+    margin-top: 5%;
+  }
+  
+  select#inputState {
+    margin: 1%;
+  }
+
+  .image{
+    width: 35px;
+    height: 35px;
+  }

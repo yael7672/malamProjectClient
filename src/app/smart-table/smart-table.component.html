@@ -1,0 +1,74 @@
+<div *ngIf="!isUnder1100">
+    <table class="table table-hover interestedInTable" id={{id}}>
+        <thead>
+            <tr class="titles">
+                <th *ngFor="let th of thArr" scope="col">
+                    <ng-container *ngIf="ifSortDown; else sortTableUpp;">
+                        <button (click)="sortTableDown(th)">
+                            <ng-container>
+                                {{th}}
+                            </ng-container>
+                            <i class="fa fa-caret-down" *ngIf="!hideSort"></i>
+                        </button>
+                    </ng-container>
+                    <ng-template #sortTableUpp>
+                        <button (click)="sortTableUp(th)">
+                            <ng-container>
+                                {{th}}
+                            </ng-container>
+                            <i class="fa fa-caret-up" *ngIf="!hideSort"></i>
+                        </button>
+                    </ng-template>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+                *ngFor="let colData of tableData | paginate: { itemsPerPage: ifShowpagination?ifShowpagination[1]:'', currentPage: p } let i = index">
+                <ng-container *ngFor="let tableDataKey of tableDataKeys">
+                    <td>{{returnColDataByType(colData, tableDataKey)}}</td>
+                </ng-container>
+                <td class="td">
+                    <div class="all-btn-of-table">
+                      <button *ngIf="showUpdate" (click)="editItem(colData)"
+                        placement="top" ngbTooltip="באפשרותך לערוך את פרטי העובד.">
+                        <i class="far fa-edit" aria-hidden="true"></i></button>
+                      <button *ngIf="showDelete" (click)="deleteItem(colData)" class="edit-button"
+                        class="edit-button" placement="bottom" ngbTooltip="באפשרותך למחוק את פרטי העובד.">
+                        <i class="	far fa-trash-alt"></i>
+                      </button>
+                    </div>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div *ngIf="isUnder1100">
+    <div class="all-cards">
+        <div class="card" [ngStyle]="{'width': '80%'}"
+            *ngFor="let colData of tableData | paginate: { itemsPerPage: ifShowpagination?ifShowpagination[1]:'', currentPage: p } let i = index">
+            <ul class="list-group list-group-flush">
+                <ng-container *ngFor="let tableDataKey of tableDataKeys; let i = index ;">
+                    <li class="list-group-item">
+                        <span class="th-arr-card">{{thArr[i]}}: </span>
+                        <td> {{returnColDataByType(colData, tableDataKey)}}</td>
+                    </li>
+                    <!-- <li class="list-group-item" *ngIf="showDelete">
+                        <td><button (click)="deleteItem($event)"> del</button></td>
+                    </li>
+                    <li class="list-group-item" *ngIf="showUpdate">
+                        <td><button (click)="editItem($event)"> up</button></td>
+                    </li> -->
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</div>
+<ng-container *ngIf="ifShowpagination?ifShowpagination[0]:''">
+    <div *ngIf="tableData?.length > ifShowpagination[1]">
+        <pagination-controls (pageChange)="p = $event" [nextLabel]="'הבא'" [previousLabel]="'הקודם'">
+        </pagination-controls>
+    </div>
+</ng-container>
